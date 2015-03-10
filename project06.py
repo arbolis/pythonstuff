@@ -84,7 +84,7 @@ print('Average games per minute:', stats.mean(gamespminf),
       'and the std dev is', stats.stdev(gamespminf))
 
 # Plotting part:
-plt.plot(machinesnbf, 'r', linewidth=3)  # , coresnbf, 'k',
+plt.plot(machinesnbf, 'r', totalmnpsf, 'k', linewidth=3)
 #  avrgMnpsf, 'b', totalmnpsf, 'y', gamespminf, 'g')
 plt.ylabel('n° of machines')
 plt.xlabel('days')
