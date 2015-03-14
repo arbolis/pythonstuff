@@ -2,7 +2,7 @@ import statistics as stats
 import matplotlib.pyplot as plt
 data = []
 shortdata = []
-with open('data.txt', 'r') as f:
+with open('fishtest.txt', 'r') as f:
     for line in f:
         data.append(line.split())
 
@@ -17,7 +17,6 @@ with open('data.txt', 'r') as f:
 
 for y, z in zip(data[::2], data[1::2]):
     shortdata.append(max(y, z, key=lambda s: float(s[3])))
-print(shortdata)
 
 machines_number = [float(sd[0]) for sd in shortdata]
 # Note that sd stands for shortdata
