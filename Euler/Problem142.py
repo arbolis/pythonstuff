@@ -1,9 +1,9 @@
 squares = []
-for i in range(1, 25):
+for i in range(1, 2000):
     squares.append(i**2)
-for x in range(1, 2):
-    for y in range(1, 4):
-        for z in range(1, 10):
+for x in range(1, 1000):
+    for y in range(1, 1000):
+        for z in range(1, 1000):
             a = x+y
             b = x-y
             c = x+z
