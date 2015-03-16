@@ -2,7 +2,7 @@ import statistics as stats
 import matplotlib.pyplot as plt
 data = []
 shortdata = []
-with open('data.txt', 'r') as f:
+with open('fishtest.txt', 'r') as f:
     for line in f:
         data.append(line.split())
 
@@ -17,7 +17,6 @@ with open('data.txt', 'r') as f:
 
 for y, z in zip(data[::2], data[1::2]):
     shortdata.append(max(y, z, key=lambda s: float(s[3])))
-print(shortdata)
 
 machines_number = [float(sd[0]) for sd in shortdata]
 # Note that sd stands for shortdata
@@ -41,8 +40,11 @@ print('Average games per minute:', stats.mean(games_per_minute),
       'and the std dev is', stats.stdev(games_per_minute))
 
 # Plotting part:
-plt.plot(machines_number, 'r', total_Mnps, 'k', linewidth=3)
+plt.plot(machines_number, 'r', linewidth=3, label='n° of machines')
+plt.plot(total_Mnps, 'k', linewidth=3, label='total Mnps')
 #  avrgMnpsf, 'b', totalmnpsf, 'y', gamespminf, 'g')
-plt.ylabel('n° of machines')
+# plt.ylabel('n° of machines and cores')
 plt.xlabel('days')
+legend = plt.legend(loc='upper left', shadow=False, fontsize='x-small')
+plt.grid()
 plt.show()
